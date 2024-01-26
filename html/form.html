@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_demo</title>
+</head>
+<body>
+    <form action="table task.html" method ="get">
+<div>
+    <label for="name">Name : </label>
+    <input type="text" id="name" name="name" minlength="3" maxlength="30" autocapitalize="off" required>
+</div>
+<div>
+    <label for="password">Password: </label>
+    <input type="password" id="password" minlength="3" maxlength="8" name="password"required >
+</div>
+<div>
+<label for="email">Email</label>
+<input type="email" id ="email" placeholder="Enter email ">
+</div>
+<!-- RADIO BUTTON -->
+<div>
+    <label for="">Gender</label>
+<input type="radio" name="Gender" id="male" value="male">
+<label for="">Male</label>
+<input type="radio" name="Gender" id="female" value="female">
+<label for="">Female</label>
+<input type="radio" name="Gender" id="others" value="others">
+<label for="">others</label>
+</div>
+<!-- DATE TYPE IN INPUT (DATE ATTRIBUTE) -- date ,datetime(manuall input),datetime-locla-->
+<DIV>
+    <label for="">Date of Birth : </label>
+    <input type="date">
+</DIV>
+<!-- DROPDOWN LIST -->
+<div>
+    <label for="">Subject : </label>
+    <select name="" id="">
+        <option value="">Html</option>
+        <option value="">Css</option>
+        <option value="">java</option>
+        <option value="">Bootstrap</option>
+    </select>
+</div>
+<!-- CHECKBOX FILE UPLOAD -->
+<div>
+    <label for="">I agree</label>
+    <input type="checkbox">
+</div>
+<div>
+    <label for="">upload resume :</label>
+    <input type="file">
+</div>
+<div>
+    <label for="">door Number</label>
+    <input type="number" max="50" step="5">
+</div>
+<div>
+    <label for="">Mobile number</label>
+    <input type="tel" pattern="[6-9][0-9]{9}"maxlength="10">
+</div>
+<!-- To ceate a comment box or text area  -->
+<div>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+<!-- type  RANGE -->
+<div>
+    <label for="">JAVA</label>
+    <input type="range">
+</div>
+<div>
+    <button type="submit">
+        Submit
+    </button>
+    <button type="reset">
+        Reset
+    </button>
+</div>
+
+    </form>
+    
+</body>
+</html>
