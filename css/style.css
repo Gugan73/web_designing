@@ -1,13 +1,16 @@
          *{
+/* id selector  */
          #p1{
             background-color:darkgoldenrod;
             color: black;
             text-align: center;
         }
+        /* class selector */
         .gu,.ga,n{
             background-color: rgb(57, 60, 59);
             color: white;
         }
+        /* child selector */
         div form{
             background-color: #0e0e0e;
         }          color:darkolivegreen;

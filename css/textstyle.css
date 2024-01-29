@@ -1,0 +1,48 @@
+#head1{
+text-align: center;
+}
+#p1{
+    /* property and values */
+    font-size:28px;
+/* on or more font family   givenn to support in multipkle browserds*/
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(4, 63, 4);
+    /*To change the case of the first letter of the word in text  */
+    text-transform:capitalize;
+    /* spacing between lines */
+    line-height:2;
+    /* spacing between words */
+    word-spacing: 5;
+    /* spacing between letter */
+    letter-spacing:1;
+    /* To bring the shadow to the text */
+    text-shadow: 1px 3px 5px rgb(78, 219, 78);
+    /* to put intend in paragraphs */
+    text-indent: 150px;
+    /* to align  the text  centre,justify, left ,right*/
+     text-align: justify;
+     /* to add border to any tag */
+     border: 3px solid black;
+     /* to add margin  to the paragraph or any tag  */
+     /*      top rig bott left    */
+     margin:100px;
+     /* same as margint works inside the border */
+    padding:25px 55px;
+    /* To make a scroll in paragraph  */
+    overflow: scroll;
+    /* to set the height of the border in paragraph */
+    height:500px;
+    }
+/* psudo element p:: is used to increase the size of the first letter. outside the block */ 
+p::first-letter{
+    font-size: 50px;
+}
+/* TO add border to tag . use comma to add multiple tags*/
+body{
+    /* border-width:3px;
+    border-style:solid;
+    border-color:black; */ 
+    /* the above code can be written as  */
+    border: 3px solid black;
+    margin: 1px 5px 5px 2px;
+}
