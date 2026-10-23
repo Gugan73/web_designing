@@ -1,0 +1,48 @@
+PROCEDURE Validate_Cro_Direct_Po (
+   order_no_       IN VARCHAR2,
+   line_no_        IN NUMBER,
+   rel_no_         IN NUMBER,
+   line_item_no_   IN NUMBER)
+IS
+ 
+   CURSOR get_dso_po IS
+      SELECT po.state
+      FROM   customer_order_line_tab co,
+             cro_line_tab cro1,
+             shop_ord_dispo_line_tab dsol,
+             purchase_order_tab po
+      WHERE  co.demand_order_ref1 = cro1.cro_no
+      AND    co.demand_order_ref2 = cro1.line_number
+      AND    cro1.supply_order_ref1 = dsol.order_no
+      AND    cro1.supply_order_ref2 = dsol.release_no
+      AND    cro1.supply_order_ref3 = dsol.sequence_no
+      AND    dsol.external_service_order = po.order_no
+      AND    co.order_no = order_no_
+      AND    co.line_no = line_no_
+      AND    co.rel_no = rel_no_
+      AND    co.line_item_no = line_item_no_
+      AND    co.supply_code = 'CRO';
+ 
+   dso_count_ NUMBER := 0;
+ 
+BEGIN
+ 
+   FOR dso_rec_ IN get_dso_po LOOP
+ 
+      dso_count_ := dso_count_ + 1;
+ 
+      IF dso_count_ > 1 THEN
+         Error_SYS.Record_General(
+            'Validate_Cro_Direct_Po',
+            'Disposition Shop Order has multiple lines.');
+      END IF;
+ 
+      IF dso_rec_.state = 'Planned' THEN
+         Error_SYS.Record_General(
+            'Validate_Cro_Direct_Po',
+            'Direct PO is in Planned status.');
+      END IF;
+ 
+   END LOOP;
+ 
+END Validate_Cro_Direct_Po;
